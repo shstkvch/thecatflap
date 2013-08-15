@@ -1,0 +1,477 @@
+
+
+@import "pure-base-0.2.1.min.scss"
+@import "pure-grid-0.2.1.min.scss"
+@import url(http://fonts.googleapis.com/css?family=Lato:300,300italic)
+
+/*!
+
+     the          |XXX|      ,/|         _.--''^``-...___.._.,;
+                  |   |     /, \'.     _-'          ,--,,,--'''
+      CAT         |   |    { \    `_-''       '    /}
+                  |   |     `;;'            ;   ; ;
+       FLAP       |   |  ._.--''     ._,,, _..'  .;.'
+                  |XXX| (,_....----'''     (,..--''
+
+        thecatflap.com/wp-content/themes/thecatflap/cats.txt 
+/*/
+
+// colour palette
+$color_core: hsl(350, 70%, 33%) // old
+//$color_core: hsl(209, 45%, 43%)
+$color_comment: hsl(161, 70%, 33%)
+$color_culture: hsl(350, 70%, 33%)
+
+$color_grey: rgb(245,245,245)
+
+
+$break-small: 768px
+$break-large: 1280px
+
+body
+  font-family: Georgia, serif
+  a 
+    text-decoration: none
+
+header#site_header
+  background: $color_core
+  padding: 10px 0 20px 0
+  text-align: center
+  
+  div.titlebox
+    width: 400px
+    position: relative
+    margin: auto
+
+    h1
+      margin: auto
+      width: 350px
+      height: 100px
+      //background-image: url(/img/catflap.png)
+      background-size: 320px
+      background-repeat: no-repeat
+      text-indent: -9999px
+    
+    h2
+      position: absolute
+      top: 80px
+      right: 110px
+
+      width: 100%
+
+      text-align: right 
+      color: #fff
+      font-size: 18px
+      font-style: italic
+      font-family: Georgia, serif
+      font-weight: normal
+
+div.top_feature
+  position: absolute
+  top: 20px
+  width: 300px
+
+  h1
+    font-size: 1.5em
+    padding: 0
+    color: #fff
+    text-align: right
+    font-weight: bold
+  p
+    margin: 10px
+    color: #fff
+    text-align: right
+  a 
+    text-decoration: none
+
+  /*@media (max-width: $break-small)
+    display: none*/
+
+div.top_feature.left
+  @extend div.top_feature
+  left: 20px
+
+div.top_feature.right
+  @extend div.top_feature
+  right: 20px
+  
+
+div.main_menu
+  ul  
+    list-style-type: none
+    text-align: center
+    margin: 10px
+
+    // coloured category links
+
+    // comment
+    li.menu-item-45 > a
+    //  color: $color_comment
+
+    li.menu-item-46 > a
+    //  color: $color_culture  // culture
+
+    li
+      display: inline
+
+      a
+        font-size: 1.1em
+        text-decoration: none
+        padding: 10px
+        color: $color_core
+
+      &.current-menu-item > a,
+      &.current-post-ancestor  > a
+        background: $color_core
+        color: #fff
+
+
+
+div.wrap 
+  // max-width: 1024px
+  width: 970px
+  margin: auto
+  padding: 0 20px 20px 20px
+
+// article bits
+div.bit
+  margin: 1em
+  a
+    text-decoration: none
+
+// i wanna go to fucking bed
+h1,h2,h3,h4,h5,h6
+  font-weight: normal
+  margin:  0
+  padding: 0
+
+div.wrap
+  h1,h2,h3,h4,h5,h6
+    margin-bottom: .7em
+
+// little titles
+h2.top_stories,
+h2.section_name,
+h2.excerpt,
+h3.comment_culture,
+h4.advertising,
+h2.miscellaneous,
+h3.miscellaneous,
+h3.related_post_title,
+h4.widgettitle
+  font-family: Lato, sans-serif
+  font-size:  1.5em
+  font-weight: 300
+  color: rgb(150,150,150)
+
+div.bit.article
+  p 
+    font-size: 1.2em
+    color: rgb(80,80,80)
+    margin-top: 5px
+  img
+    width: 100%
+    height: auto
+  a 
+    display: block
+  a:link > h1, a:link > h2
+    margin-top: 10px
+    margin-bottom: 10px
+    color: $color_core
+  a:visited > h1, h2
+    color: darken($color_core, 10%)
+  a:hover > h1, a:hover > h2
+    text-decoration: underline
+
+  margin-bottom: 1em
+  &.small 
+    p 
+      font-size: 1em
+
+
+
+div.bit.article.small
+  //
+  h1,h2
+    font-size: 1.7em
+  p 
+    font-size: 1.2em
+
+div.bit.article.smaller
+  @extend div.bit.article.small 
+  h1,h2
+    font-size: 1.5em
+// lesser articles greyness
+div.bit.lesser
+  background: $color_grey
+  margin: 1em
+  padding: 10px
+  font-size: .8em
+
+  h2
+    font-family: Lato, sans-serif
+    font-size:  1.5em
+    font-weight: 300
+    color: rgb(120,120,120)
+
+  ul 
+    list-style-type: disc
+
+    padding: 0 0 0 30px
+    li
+      color: darken($color_core, 10%)
+      h3
+        a 
+          color: $color_core
+          &:hover
+            text-decoration: underline
+          &:visited
+            color: darken($color_core, 10%)
+
+
+// tiny bit
+div.bit.article.tiny
+  @extend div.bit.article.small
+  h1,h2
+    font-size: 1.5em
+  p  
+    font-size: 1em
+  margin: 0
+  width: 393px
+
+  padding: 5px
+  min-height: 100px // ugh
+  margin-bottom: 2em
+
+  // img shit
+  div.img-holder 
+    width: 30%
+    display: inline-block
+    float: left
+
+  div.text-holder
+    width: 70%
+    display: inline-block
+    float: right
+
+div.bit.article_full
+
+  p 
+    margin-top: 12px
+    color: rgb(80,80,80)
+    line-height: 1.5em
+
+  p.location
+    color: rgb(140,140,140)
+    text-transform: uppercase
+
+  div.image
+    float: left
+    max-width: 250px
+    margin: 20px
+    background: rgb(230,230,230)
+    padding: 10px
+
+    font-size: .9em
+    text-align: center
+    font-family: Lato, sans-serif
+    color: rgb(50,50,50)
+
+    img
+      margin-bottom: 5px
+
+  
+
+// fucking adverts!
+div.bit.advert
+  
+// the footer
+footer
+  text-align: left
+  padding: 20px
+  background: $color_grey
+  color: rgb(140,140,140)
+
+  ul
+    margin-top: 1em
+    margin-bottom: 1em
+    border-bottom: 1px solid darken($color_grey, 10%)
+    margin-right: 40px
+    li 
+      margin-bottom: 1em
+      text-align: center
+    &.last 
+      border: none
+
+
+  a 
+    color: $color_core
+
+// fucking title thing
+div.bit.title 
+  p 
+    color: hsl(0, 0%, 36%)
+    line-height: 1.5em
+
+
+// fucking word of the fucking day
+div.bit.wotd
+  @extend div.bit.article
+  h2
+    text-decoration: none
+    margin-bottom: 0
+    font-size: 2em
+    color: rgb(20,20,20)
+    &:hover 
+      text-decoration: none
+  span.date 
+    color: rgb(150,150,150)
+    margin: .5em
+  p 
+    margin: .5em
+
+
+// text selection bullshit
+::selection
+  //background-color: lighten($color_core, 60%)
+  background-color: rgb(230,230,230)
+  color: rgb(40,40,40)
+
+// sharing pish
+div#minishare 
+
+  div
+    background-position: 5px 6px !important
+
+// adblock
+div.ad_holder
+  text-align: center
+
+// apology
+div.apology
+  background: $color_grey
+  padding: 10px
+  margin-top: 20px
+  h1
+    font-size: 1.5em
+
+////// ARTICLE BONUS BOLLOCKS ///////
+
+// fucking bar charts
+div.barchart
+  background: $color_grey
+  padding: 10px 30px 10px 30px
+  margin-bottom: 20px
+  div.barwrap
+
+    margin: 0
+    padding: 0
+
+    div.bar 
+      background: hsl(300, 70%, 33%)
+      padding: 10px 20px 10px 20px
+      font-size: 28px
+      display: inline-block
+      color: rgb(255,255,255)
+      font-style: italic
+      margin-bottom: 20px
+      &.b2
+        background: hsl(350, 70%, 33%)
+      &.b3
+        background: hsl(142, 70%, 33%)
+      &.b4
+        background: hsl(226, 70%, 33%)
+
+    span.percent
+      margin-left: 20px
+      display: inline
+      font-size: 1.2em
+      color: rgb(150,150,150)
+
+div.factbox // facts box
+  max-width: 400px
+  float: left
+  margin: 20px
+  background: rgb(230,230,230)
+  padding: 10px
+
+  h1,h2
+    font-family: Lato, sans-serif
+    font-size: 1.2em
+    text-transform: uppercase
+    color: $color_core
+
+  ul
+    li
+      margin-top: 10px
+      color: rgb(80,80,80)
+      line-height: 1.5em
+      font-size: 1em
+
+  &.center 
+    margin: 40px auto 20px auto
+    float: none
+    max-width: 100%
+// article pish
+body.single, body.page
+
+  article
+    header 
+      margin-top: 2em
+
+    div.article_img 
+      width: 646px
+      margin: 0 0 2em 2em
+      float: right
+      img   
+        width: 100%
+        height: auto
+        margin: 0
+      span.caption
+        background: $color_grey
+        color: rgb(40,40,40)
+        display: block
+        padding: 5px
+        margin: 0
+        font-style: italic
+        text-align: center
+        font-family: Lato, sans-serif
+    p 
+      display: block
+      line-height: 1.8em
+      margin: 0 0 1em 0
+      color: hsl(0, 0%, 19%)
+      text-align: justify
+      font-size: 1em
+    ul 
+      li
+        margin-bottom: 10px
+    h1 
+      margin-bottom: .3em
+    h2.excerpt 
+      // ctrl+f to find where this is actually defined
+      margin-bottom: 1.5em
+    h1.article_title 
+      
+      font-size: 2.5em
+
+    div.license 
+      p 
+        color: rgb(200,200,200)
+        font-family: Lato, sans-serif
+        font-style: italic
+        a 
+          text-decoration: underline
+          color: rgb(200,200,200)
+
+// pad related posts 
+.wp_rp_wrap 
+  margin: 20px auto auto auto
+  ul.related_post li a
+    color: rgb(20,20,20)
+    font-size: 16px !important // ugh
+
+// stops twitter fucking up
+iframe.twitter-share-button 
+  position: relative
+  top: 3px
