@@ -2,6 +2,7 @@
 .htaccess
 wp-config.php
 wp-content/upgrade/
+wp-content/uploads/
 wp-content/backup-db/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
